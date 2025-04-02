@@ -21,12 +21,12 @@ hypothesis_subtitle_path = "predicted_subtitle.srt"
 wer_score = wer(reference_subtitle_path, hypothesis_subtitle_path)
 cer_score = cer(reference_subtitle_path, hypothesis_subtitle_path)
 
+print(f"WER: {wer_score}")
+print(f"CER: {cer_score}")
+
 # Calculate without normalization
 wer_score_no_norm = wer(reference_subtitle_path, hypothesis_subtitle_path, normalize=False)
 cer_score_no_norm = cer(reference_subtitle_path, hypothesis_subtitle_path, normalize=False)
-
-print(f"WER: {wer_score}")
-print(f"CER: {cer_score}")
 ```
 
 ## Normalization
