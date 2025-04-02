@@ -12,15 +12,12 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         python: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - name: Clean up space for action
-        run: rm -rf /opt/hostedtoolcache
-
       - uses: actions/checkout@v4
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -28,8 +25,8 @@ jobs:
           python-version: ${{ matrix.python }}
 
       - name: Install dependencies
-        run: pip install -r requirements.txt pytest jiwer
+        run: pip install -e .[dev]
 
       - name: Run test
-        run: python -m pytest -rs tests
+        run: python -m pytest -s tests
 
