@@ -1,0 +1,13 @@
+1
+00:00:01,000 --> 00:00:04,000
+Hello world, this is a test!
+
+2
+00:00:05,000 --> 00:00:08,000
+This is a simple subtitle file
+for the SubWER package.
+
+3
+00:00:09,000 --> 00:00:12,000
+It will be used to demonstrate
+WER and CER calculation. 
