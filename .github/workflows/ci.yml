@@ -3,14 +3,12 @@ name: CI
 on:
   workflow_dispatch:
 
-  push:
-    branches:
-      - master
-      - intel-gpu
-  pull_request:
-    branches:
-      - master
-      - intel-gpu
+  # push:
+  #   branches:
+  #     - master
+  # pull_request:
+  #   branches:
+  #     - master
 
 jobs:
   test:
