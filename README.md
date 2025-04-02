@@ -1,7 +1,7 @@
 # subwer
 
 A python package for calculating Word Error Rate (WER) and Character Error Rate (CER) between subtitle files.<br>
-This uses [`jiwer`](https://github.com/jitsi/jiwer) to compare WER.
+This uses [`jiwer`](https://github.com/jitsi/jiwer) to compare WER / CER.
 
 ## Installation
 
