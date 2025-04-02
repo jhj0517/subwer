@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - master
+      - intel-gpu
+  pull_request:
+    branches:
+      - master
+      - intel-gpu
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Clean up space for action
+        run: rm -rf /opt/hostedtoolcache
+
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt pytest jiwer
+
+      - name: Run test
+        run: python -m pytest -rs tests
+
