@@ -13,7 +13,7 @@ pip install subwer
 ```python
 from subwer import wer, cer
 
-# Calculate WER between two subtitle files
+# Calculate WER between two subtitle files ( Only SRT file is supported for now! )
 reference_subtitle_path = "answer_subtitle.srt"
 hypothesis_subtitle_path = "predicted_subtitle.srt"
 
